@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.miin.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/cerulean.css">
+        <style>
+            body
+            {
+                background: url("img/fruit_Pod.jpg") no-repeat fixed;
+                background-size: cover;    
+                color: #fff;
+                font-family: "Calibri"; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div><img class="col-lg-4 col-lg-offset-10" style="width: 220px; margin-top: 40px;" src="./img/basitide.png" /></div>
+            <div class="col-md-7 col-md-offset-3" style="margin-top: 110px;">
+                <form method="POST" action="login.php" id="form-filter" class="form-horizontal well" enctype="multipart/form-data">
+                    <fieldset>
+                        <h2 style="color: yellowgreen; text-align: center;">Insulinothérapie</h2><br>
+                        <div class="form-group">
+                            <label for="login" class="col-sm-3 control-label">Login:</label>
+                            <div class="col-sm-8">
+                                <input type="text" placeholder="nom d'utilisateur" class="form-control" name="login" id="login">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mdp" class="col-sm-3 control-label">Mot de passe:</label>
+                            <div class="col-sm-8">
+                                <input type="password" placeholder="mot de passe" class="form-control" name="mdp" id="mdp">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom" class="col-sm-3 control-label"></label>
+                            <div class="col-sm-8">
+                                <button type="submit" id="session" class="btn btn-success"> Se connecter <i class="glyphicon glyphicon-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mdp" class="col-sm-9 control-label">Vous n'avez pas encore de compte ? <a href="./inscription.php">Créez-en un!</a></label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <button class="btn btn-primary btn-lg hidden" id="triggerwarning" data-toggle="modal" data-target="#loginerror"></button>
+            <div class="modal" id="loginerror">
+                <div class="modal-dialog">
+                    <div class="modal-content alert alert-dismissible alert-info col-lg-12">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="ferme">&times;</button>
+                            <h4 class="modal-title" style="text-align: center;">Une erreur est survenue !</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="warning" id="erreur_login"></div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./bootstrap/js/jquery.js"></script>   
+        <script src="./bootstrap/js/bootstrap.min.js"></script> 
+        <script type="text/javascript">
+            
+            $('#session').click(function (e)
+            {
+                e.preventDefault();
+                var form = $('#form-filter').get(0);
+                var formData = new FormData(form);// get the form data
+                // on envoi formData vers mail.php
+                $.ajax({
+                    type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                    url: 'login.php', // the url where we want to POST
+                    data: formData, // our data object
+                    dataType: 'text', // what type of data do we expect back from the server
+                    processData: false,
+                    contentType: false,
+                    success: function (server_response)
+                    {
+                        if (server_response === "succes")
+                        {
+                            window.location.href = "page.php";
+                        }
+                        else
+                        {
+                            $('#erreur_login').html('<p>' + server_response + '</p>');
+                            $('#triggerwarning').trigger('click');
+                            setTimeout(function () {
+                                $('#ferme').trigger('click');
+                            }, 4000);
+                        }
+                    },
+                    error: function (server_response)
+                    {
+                        alert(server_response);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

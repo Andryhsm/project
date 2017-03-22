@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.miin.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/cerulean.css">
+
+        <style>
+            #rot  img{
+                -webkit-transition:-webkit-transform .9s; 
+                -moz-transition:-moz-transform .9s;       
+                -o-transition:-o-transform .9s;          
+                -ms-transition:-ms-transform .9s;         
+                transition:transform .9s;
+            }
+
+            #rot  img:hover{
+                -webkit-transform:rotate(720deg); 
+                -moz-transform:rotate(720deg);
+                -o-transform:rotate(720deg); 
+                -ms-transform:rotate(720deg); 
+                transform:rotate(720deg);
+            }
+
+            img.zoomEffect {
+                -moz-transition: all 0.5s ease-in-out 0s;
+                -webkit-transition: all 0.5s ease-in-out 0s;
+                -o-transition: all 0.5s ease-in-out 0s;
+                -ms-transition: all 0.5s ease-in-out 0s;
+                transition: all 0.5s ease-in-out 0s;
+                opacity: 0.7;
+            }
+            img.zoomEffect:hover {
+                -moz-transform: rotate(5deg) scale(1.10);
+                -webkit-transform: rotate(5deg) scale(1.10);
+                -o-transform: rotate(5deg) scale(1.10);
+                -ms-transform: rotate(5deg) scale(1.10);
+                transform: rotate(5deg) scale(1.10);
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container"  style="margin-top: 230px;">
+            <div class="col-lg-3 col-md-offset-1">
+                <center>  
+                    
+                        <img class="zoomEffect" src="./img/save.png" width="120" alt="">
+                        <h3 style="color: yellowgreen; text-align: center;">ENREGISTRER</h3> 
+                   
+                </center>
+            </div>
+            <div class="col-lg-3">
+                <center>
+                   
+                        <img class="zoomEffect" src="./img/share.png" width="160" alt="">
+                        <h3 style="color: yellowgreen; text-align: center;">PARTAGER</h3>
+                    
+                </center>
+            </div>
+            <div class="col-lg-3">
+                <center>
+                    
+                        <img class="zoomEffect" src="./img/print.png"  width="160" alt="">
+                        <h3 style="color: yellowgreen; text-align: center;">IMPRIMER</h3>
+                    
+                </center>
+            </div>        
+        </div>
+    </body>
+</html>
