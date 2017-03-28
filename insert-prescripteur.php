@@ -39,19 +39,18 @@ if ($nom == "" || $prenom == "" || $email == "" || $tel == "" || $adresse == "" 
             if ($mdp == $conf_mdp) {
                 $bdd->exec("INSERT INTO `prescripteur` (`photo`,`nom`,`prenom`,`tel`,`email`,`adresse`,`rue`,`code-postal`,`ville`,`etablissement`,`statut`,`login`,`mdp`) VALUES ('avatar.png','$nom','$prenom','$tel','$email','$adresse','$rue','$code_postal','$ville','$etablissement','$statut','$login','$mdp')") or die(print_r($bdd->ErrorInfo()));
                 $_SESSION['login'] = $login;
-                $donnees = $reponse->fetch();
-    
-                $_SESSION['photo'] = $donnees['photo'];
-                $_SESSION['nom'] = $donnees['nom'];
-                $_SESSION['prenom'] = $donnees['prenom'];
-                $_SESSION['tel'] = $donnees['tel'];
-                $_SESSION['email'] = $donnees['email'];
-                $_SESSION['adresse'] = $donnees['adresse'];
-                $_SESSION['rue'] = $donnees['rue'];
-                $_SESSION['code-postal'] = $donnees['code-postal'];
-                $_SESSION['ville'] = $donnees['ville'];
-                $_SESSION['etablissement'] = $donnees['etablissement'];
-                $_SESSION['statut'] = $donnees['statut'];
+
+                $_SESSION['photo'] = 'avatar.png';
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['tel'] = $tel;
+                $_SESSION['email'] = $email;
+                $_SESSION['adresse'] = $adresse;
+                $_SESSION['rue'] = $rue;
+                $_SESSION['code-postal'] = $code_postal;
+                $_SESSION['ville'] = $ville;
+                $_SESSION['etablissement'] = $etablissement;
+                $_SESSION['statut'] = $statut;
                 echo 'succes';
             } else {
                 echo("Mot de passe non identique");
@@ -87,18 +86,18 @@ if ($nom == "" || $prenom == "" || $email == "" || $tel == "" || $adresse == "" 
                         $bdd->exec("INSERT INTO `prescripteur` (`photo`,`nom`,`prenom`,`tel`,`email`,`adresse`,`rue`,`code-postal`,`ville`,`etablissement`,`statut`,`login`,`mdp`) VALUES ('$fichier','$nom','$prenom','$tel','$email','$adresse','$rue','$code_postal','$ville','$etablissement','$statut','$login','$mdp')") or die(print_r($bdd->ErrorInfo()));
                         $_SESSION['login'] = $login;
                         $donnees = $reponse->fetch();
-    
-                        $_SESSION['photo'] = $donnees['photo'];
-                        $_SESSION['nom'] = $donnees['nom'];
-                        $_SESSION['prenom'] = $donnees['prenom'];
-                        $_SESSION['tel'] = $donnees['tel'];
-                        $_SESSION['email'] = $donnees['email'];
-                        $_SESSION['adresse'] = $donnees['adresse'];
-                        $_SESSION['rue'] = $donnees['rue'];
-                        $_SESSION['code-postal'] = $donnees['code-postal'];
-                        $_SESSION['ville'] = $donnees['ville'];
-                        $_SESSION['etablissement'] = $donnees['etablissement'];
-                        $_SESSION['statut'] = $donnees['statut'];
+
+                        $_SESSION['photo'] = $fichier;
+                        $_SESSION['nom'] = $nom;
+                        $_SESSION['prenom'] = $prenom;
+                        $_SESSION['tel'] = $tel;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['adresse'] = $adresse;
+                        $_SESSION['rue'] = $rue;
+                        $_SESSION['code-postal'] = $code_postal;
+                        $_SESSION['ville'] = $ville;
+                        $_SESSION['etablissement'] = $etablissement;
+                        $_SESSION['statut'] = $statut;
                         echo 'succes';
                     } else {
                         echo("Mot de passe non identique");
