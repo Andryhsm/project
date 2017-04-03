@@ -181,6 +181,8 @@
                     forceParse: 0
                 });
                 $("#1").click(function () {
+                    $("#etape6").hide();
+                    $("#etape5").hide();
                     $("#etape4").hide();
                     $("#etape3").hide();
                     $("#etape2").hide();
@@ -191,6 +193,8 @@
                     $("#etape1").hide();
                     $("#etape3").hide();
                     $("#etape4").hide();
+                    $("#etape5").hide();
+                    $("#etape6").hide();
                     var Horaire1 = "",
                             Horaire2 = "",
                             Horaire3 = "",
@@ -647,6 +651,8 @@
                     $("#etape1").hide();
                     $("#etape2").hide();
                     $("#etape4").hide();
+                    $("#etape5").hide();
+                    $("#etape6").hide();
 
                     var date1 = "", date2 = "", date3 = "", date4 = "", date5 = "", date6 = "", date7 = "", date8 = "", date9 = "";
                     var taille1 = 0, taille2 = 0, taille3 = 0, taille4 = 0, taille5 = 0, taille6 = 0, taille7 = 0, taille8 = 0, taille9 = 0;
@@ -846,6 +852,24 @@
                     $("#etape1").hide();
                     $("#etape2").hide();
                     $("#etape3").hide();
+                    $("#etape5").hide();
+                    $("#etape6").hide();
+                });
+                $("#5").click(function () {
+                    $("#etape5").show();
+                    $("#etape1").hide();
+                    $("#etape2").hide();
+                    $("#etape3").hide();
+                    $("#etape4").hide();
+                    $("#etape6").hide();
+                });
+                $("#6").click(function () {
+                    $("#etape6").show();
+                    $("#etape1").hide();
+                    $("#etape2").hide();
+                    $("#etape3").hide();
+                    $("#etape5").hide();
+                    $("#etape4").hide();
                 });
             });
         </script>
@@ -896,7 +920,13 @@
                 <div class="item"  id="etape3" style="display: none;">
                     <?php require './etape3.php'; ?>
                 </div>
-                <div class="item" id="etape4" style="display: none;">
+                <div class="item"  id="etape4" style="display: none;">
+                    eto ny 4
+                </div>
+                <div class="item"  id="etape5" style="display: none;">
+                    eto ny 5
+                </div>
+                <div class="item" id="etape6" style="display: none;">
                     <div class="container"  style="margin-top: 230px;">
                         <div class="col-lg-3 col-md-offset-1">
                             <center>  
@@ -929,10 +959,12 @@
             <button type="submit" class="btn btn-primary hidden" id="save">Enregistrement</button>
         </form>
         <div class="container">
-            <button class="btn btn-default col-md-3 col-lg-3 col-sm-12 col-xs-12" id="1">Etape 1</button>
-            <button class="btn btn-primary col-md-3 col-lg-3 col-sm-12 col-xs-12" id="2">Etape 2</button>
-            <button class="btn btn-success col-md-3 col-lg-3 col-sm-12 col-xs-12" id="3">Etape 3</button>
-            <button class="btn btn-warning col-md-3 col-lg-3 col-sm-12 col-xs-12" id="4">Etape 4</button>
+            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="1">Etape 1</button>
+            <button class="btn btn-primary col-md-3 col-lg-2 col-sm-12 col-xs-12" id="2">Etape 2</button>
+            <button class="btn btn-success col-md-2 col-lg-2 col-sm-12 col-xs-12" id="3">Etape 3</button>
+            <button class="btn btn-warning col-md-2 col-lg-2 col-sm-12 col-xs-12" id="4">Etape 4</button>
+            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="5">Etape 5</button>
+            <button class="btn btn-primary col-md-2 col-lg-2 col-sm-12 col-xs-12" id="6">Etape 6</button>
         </div>
 
         <button class="btn btn-primary btn-lg hidden" id="triggerwarning" data-toggle="modal" data-target="#loginerror"></button>
