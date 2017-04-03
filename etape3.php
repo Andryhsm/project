@@ -326,9 +326,5 @@
                 <input type="text" name="frequence2" class="form-control" id="frequence2" placeholder="fréquence">
             </div>
         </div>
-
-
     </fieldset><br/><br/>
-
 </div>
-

@@ -279,7 +279,7 @@
 
 		echo "Enregistrement reussi!";
 
-	} catch (PDOException $e) 
+	} catch(PDOException $e) 
 	{
 		echo("Erreur : " .$e->getMessage());	
 	}
