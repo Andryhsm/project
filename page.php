@@ -869,7 +869,7 @@
                     $("#etape2").hide();
                     $("#etape5").show();
                     $("#etape6").hide();
-                    $("#etape5").hide();
+                    $("#etape4").hide();
                 });
             });
         </script>
@@ -921,10 +921,10 @@
                     <?php require './etape3.php'; ?>
                 </div>
                 <div class="item" id="etape4" style="display: none;">
-                    <?php require './etape4.php'; ?>
+                    erdhfgj
                 </div>
                 <div class="item"  id="etape5" style="display: none;">
-                    <?php require './etape5.php'; ?>
+                    shfcgvb
                 </div>
                 <div class="item" id="etape6" style="display: none;">
                     <div class="container"  style="margin-top: 230px;">
@@ -959,12 +959,12 @@
             <button type="submit" class="btn btn-primary hidden" id="save">Enregistrement</button>
         </form>
         <div class="container">
-            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="1">Etape 1</button>
-            <button class="btn btn-primary col-md-2 col-lg-2 col-sm-12 col-xs-12" id="2">Etape 2</button>
-            <button class="btn btn-success col-md-2 col-lg-2 col-sm-12 col-xs-12" id="3">Etape 3</button>
-            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="4">Etape 4</button>
-            <button class="btn btn-info col-md-2 col-lg-2 col-sm-12 col-xs-12" id="5">Etape 5</button>
-            <button class="btn btn-warning col-md-2 col-lg-2 col-sm-12 col-xs-12" id="6">Etape 6</button>
+            <button class="btn btn-default col-md-2 col-lg-2 col-sm-6 col-xs-6" id="1" onClick="enHaut();">Etape 1</button>
+            <button class="btn btn-primary col-md-2 col-lg-2 col-sm-6 col-xs-6" id="2" onClick="enHaut();">Etape 2</button>
+            <button class="btn btn-success col-md-2 col-lg-2 col-sm-6 col-xs-6" id="3" onClick="enHaut();">Etape 3</button>
+            <button class="btn btn-default col-md-2 col-lg-2 col-sm-6 col-xs-6" id="4" onClick="enHaut();">Etape 4</button>
+            <button class="btn btn-info col-md-2 col-lg-2 col-sm-6 col-xs-6" id="5" onClick="enHaut();">Etape 5</button>
+            <button class="btn btn-warning col-md-2 col-lg-2 col-sm-6 col-xs-6" id="6" onClick="enHaut();">Etape 6</button>
         </div>
 
         <button class="btn btn-primary btn-lg hidden" id="triggerwarning" data-toggle="modal" data-target="#loginerror"></button>
@@ -1034,6 +1034,11 @@
                     }
                 });
             });
+
+            function enHaut()
+            {
+                $('html,body').animate({scrollTop: 0}, 'fast');
+            };
         </script>
 
     </body>

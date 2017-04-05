@@ -95,7 +95,7 @@
         </div>
 
     </fieldset>
-    <fieldset class="col-sm-4">
+    <fieldset class="col-sm-5">
         <div class="well">
             <center><h4>RENSEIGNEMENTS PATIENT</h4></center>
             <div class="form-group">
@@ -172,7 +172,7 @@
         </div>
     </fieldset>
 
-    <fieldset class="col-sm-8">
+    <fieldset class="col-sm-7">
         <div class="well">
             <center><h4>RENSEIGNEMENTS PRESCRIPTEUR</h4></center>
             <div class="form-group">
@@ -181,19 +181,19 @@
                     <input type="text" readonly="" placeholder="Etablissement prescripteur" class="form-control" name="etablissementprescripteur" id="etablissementprescripteur" value="<?php echo utf8_encode($_SESSION['etablissement']); ?>">
                 </div>
             </div>
-            <div class="form-group col-sm-6">
+            <!--<div class="form-group col-sm-6">
                 <label for="ville" class="col-sm-3 control-label">Ville:</label>
                 <div class="col-sm-9">
                     <input type="text" placeholder="Ville" class="form-control" name="villeep" id="villeep">
                 </div>
-            </div>
+            </div>-->
 
-            <div class="form-group col-sm-6">
-                <label for="service" class="col-sm-3 control-label">Service:</label>
-                <div class="col-sm-9">
+            <div class="form-group col-sm-9">
+                <label for="service" class="col-sm-5 control-label">Service:</label>
+                <div class="col-sm-7">
                     <input type="text" placeholder="Service" class="form-control" name="serviceep" id="serviceep">
                 </div>
-            </div>
+            </div><br>
 
 
             <div class="prescripteur hidden">
@@ -342,7 +342,7 @@
 
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="referenteservice" class="col-sm-4 control-label">IDE référente du service:</label>
                 <div class="col-sm-7">
                     <input type="text" placeholder="IDE référente du service" class="form-control" name="idereferente" id="idereferente">
@@ -373,7 +373,7 @@
                 <div class="col-sm-9">
                     <input type="email" placeholder="mail" class="form-control" name="mailirs" id="mailirs">
                 </div>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="membrereseau" class="col-sm-4 control-label">Membre réseau:</label>
                 <div class="col-sm-7">
@@ -438,7 +438,11 @@
         <div class="form-group">
             <label for="mobile" class="col-sm-4 control-label">Type de cathéter:</label>
             <div class="col-sm-7">
-                <div class="radio">
+                <select name="catheter" class="form-control">
+                    <option value="DROIT">DROIT</option>
+                    <option value="TANGEANTIEL">TANGEANTIEL</option>
+                </select>
+                <!-- <div class="radio">
                     <label>
                         <input type="radio" name="typecatheter" id="optionsRadios1" value="DROIT" checked="">
                         DROIT
@@ -448,7 +452,7 @@
                         <input type="radio" name="typecatheter" id="optionsRadios2" value="TANGEANTIEL">
                         TANGEANTIEL
                     </label>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -497,7 +501,13 @@
         <div class="form-group">
             <label for="reservoir" class="col-sm-4 control-label">Réservoir:</label>
             <div class="col-sm-7">
-                <input type="text" placeholder="Réservoir" class="form-control" name="reservoir" id="reservoir">
+                <select name="reservoir" class="form-control">
+                    <option value="Réservoir 1">Réservoir 1</option>
+                    <option value="Réservoir 2">Réservoir 2</option>
+                    <option value="Réservoir 3">Réservoir 3</option>
+                    <option value="Réservoir 4">Réservoir 4</option>
+                </select>
+                <!-- <input type="text" placeholder="Réservoir" class="form-control" name="reservoir" id="reservoir"> -->
             </div>
         </div>
         <div class="form-group">
