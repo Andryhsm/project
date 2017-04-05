@@ -70,9 +70,9 @@
 	$imc7 = ($_POST["imc7"]);
 	$imc8 = ($_POST["imc8"]);
 	$imc9 = ($_POST["imc9"]);
-	$activitephysique2 = ($_POST["activitephysique2"]);
-	$type = ($_POST["type"]);
-	$frequence2 = ($_POST["frequence2"]);
+	//$activitephysique2 = ($_POST["activitephysique2"]);
+	//$type = ($_POST["type"]);
+	//$frequence2 = ($_POST["frequence2"]);
 
 	//Enregistrement dans la table habitudevie
 
@@ -93,14 +93,14 @@
 	$dateprescription = ($_POST['dateprescription']);
 	$styloautopiqueur = ($_POST['styloautopiqueur']);
 	$nombreinjectionjour = ($_POST['nombreinjectionjour']);
-	$schemamultiinjection = ($_POST['schemamultiinjection']);
+	//$schemamultiinjection = ($_POST['schemamultiinjection']);
 	$stylo = ($_POST['stylo']);
 	$autrestylo = ($_POST['autrestylo']);
 	$aiguillestylo = ($_POST['aiguillestylo']);
 	$autreaiguille = ($_POST['autreaiguille']);
 	$insulinelentematin = ($_POST['insulinelentematin']);
 	$insulinerapidematin = ($_POST['insulinerapidematin']);
-	$quantitetotal = ($_POST['quantitetotal']);
+	//$quantitetotal = ($_POST['quantitetotal']);
 	$insulinelentemidi = ($_POST['insulinelentemidi']);
 	$insulinerapidemidi = ($_POST['insulinerapidemidi']);
 	$insulinelentesoir = ($_POST['insulinelentesoir']);
@@ -281,7 +281,7 @@
 
 		$bdd->exec("INSERT INTO alarmesetprecautions(alarmedate1, alarmedate2, alarmedate3, alarmedate4, commentaire1, alarmedate5, alarmedate6, alarmedate7, alarmedate8, commentaire2, alarmedate9, alarmedate10, alarmedate11, alarmedate12, commentaire3, alarmedate13, alarmedate14, alarmedate15, alarmedate16, commentaire4, alarmedate17, alarmedate18, alarmedate19, alarmedate20, commentaire5, alarmedate21, alarmedate22, alarmedate23, alarmedate24, commentaire6, alarmedate25, alarmedate26, alarmedate27, alarmedate28, commentaire7) VALUES ('" . $_POST["alarmedate1"] . "','" . $_POST["alarmedate2"] . "','" . $_POST["alarmedate3"] . "','" . $_POST["alarmedate4"] . "','" . $_POST["alarmecommentaire1"] . "','" . $_POST["alarmedate5"] . "','" . $_POST["alarmedate6"] . "','" . $_POST["alarmedate7"] . "','" . $_POST["alarmedate8"] . "','" . $_POST["alarmecommentaire2"] . "','" . $_POST["alarmedate9"] . "','" . $_POST["alarmedate10"] . "','" . $_POST["alarmedate11"] . "','" . $_POST["alarmedate12"] . "','" . $_POST["alarmecommentaire3"] . "','" . $_POST["alarmedate13"] . "','" . $_POST["alarmedate14"] . "','" . $_POST["alarmedate15"] . "','" . $_POST["alarmedate16"] . "','" . $_POST["alarmecommentaire4"] . "','" . $_POST["alarmedate17"] . "','" . $_POST["alarmedate18"] . "','" . $_POST["alarmedate19"] . "','" . $_POST["alarmedate20"] . "','" . $_POST["alarmecommentaire5"] . "','" . $_POST["alarmedate21"] . "','" . $_POST["alarmedate22"] . "','" . $_POST["alarmedate23"] . "','" . $_POST["alarmedate24"] . "','" . $_POST["alarmecommentaire6"] . "','" . $_POST["alarmedate25"] . "','" . $_POST["alarmedate26"] . "','" . $_POST["alarmedate27"] . "','" . $_POST["alarmedate28"] . "','" . $_POST["alarmecommentaire7"] . "')") or die(print_r($bdd->ErrorInfo()));
 
-		
+		*/
 		$bdd->exec("INSERT INTO manipulations
 		(
 			date1, date2, date3, date4, 
@@ -324,7 +324,7 @@
 		"')") or die(print_r($bdd->ErrorInfo()));
 
 		
-		$bdd->exec("INSERT INTO pauseducatheter
+		$bdd->exec("INSERT INTO poseducatheter
 		(
 			date1, date2, date3, date4, 
 			commentaire1, 
@@ -408,9 +408,9 @@
 		"')") or die(print_r($bdd->ErrorInfo()));
 		
 
-		$req = $bdd->prepare("INSERT INTO DonneMedicale(typediabete, datediagnostic, circonstancedecouverte, antecedentfamiliaux, datepremieremisesouspompe, hba1c, poidsactuel, poidsforme, taille, imc, nombreglycemieparjour, typelecteur, dateprescription, styloautopiqueur, nombreinjectionjour, schemamultiinjection, stylo, autrestylo, aiguillestylo, autreaiguille, insulinelentematin, insulinerapidematin, quantitetotal, insulinelentemidi, insulinerapidemidi, insulinelentesoir, insulinerapidesoir, totalinsulinelente, totalinsulinerapide, specialite1, posologie1, specialite2, posologie2, specialite3, posologie3, specialite4, posologie4, Horaire1, Debit1, Horaire2, Debit2, Horaire3, Debit3, Horaire4, Debit4, Horaire5, Debit5, Horaire6, Debit6, Horaire7, Debit7, Horaire8, Debit8, Horaire9, Debit9, Horaire10, Debit10, Horaire11, Debit11, Horaire12, Debit12, Horaire13, Debit13, Horaire14, Debit14, Horaire15, Debit15, Horaire16, Debit16, Horaire21, Debit21, Horaire22, Debit22, Horaire23, Debit23, Horaire24, Debit24, Horaire25, Debit25, Horaire26, Debit26, Horaire27, Debit27, Horaire28, Debit28, Horaire29, Debit29, Horaire210, Debit210, Horaire211, Debit211, Horaire212, Debit212, Horaire213, Debit213, Horaire214, Debit214, Horaire215, Debit215, Horaire216, Debit216) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+		$req = $bdd->prepare("INSERT INTO DonneMedicale(typediabete, datediagnostic, circonstancedecouverte, antecedentfamiliaux, datepremieremisesouspompe, hba1c, poidsactuel, poidsforme, taille, imc, nombreglycemieparjour, typelecteur, dateprescription, styloautopiqueur, nombreinjectionjour, stylo, autrestylo, aiguillestylo, autreaiguille, insulinelentematin, insulinerapidematin, insulinelentemidi, insulinerapidemidi, insulinelentesoir, insulinerapidesoir, totalinsulinelente, totalinsulinerapide, specialite1, posologie1, specialite2, posologie2, specialite3, posologie3, specialite4, posologie4, Horaire1, Debit1, Horaire2, Debit2, Horaire3, Debit3, Horaire4, Debit4, Horaire5, Debit5, Horaire6, Debit6, Horaire7, Debit7, Horaire8, Debit8, Horaire9, Debit9, Horaire10, Debit10, Horaire11, Debit11, Horaire12, Debit12, Horaire13, Debit13, Horaire14, Debit14, Horaire15, Debit15, Horaire16, Debit16, Horaire21, Debit21, Horaire22, Debit22, Horaire23, Debit23, Horaire24, Debit24, Horaire25, Debit25, Horaire26, Debit26, Horaire27, Debit27, Horaire28, Debit28, Horaire29, Debit29, Horaire210, Debit210, Horaire211, Debit211, Horaire212, Debit212, Horaire213, Debit213, Horaire214, Debit214, Horaire215, Debit215, Horaire216, Debit216) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
-		$req->execute(array($typediabete, $datediagnostic, $circonstancedecouverte, $antecedentfamiliaux, $datepremieremisesouspompe, $hba1c, $poidsactuel, $poidsforme, $taille, $imc, $nombreglycemieparjour, $typelecteur, $dateprescription, $styloautopiqueur, $nombreinjectionjour, $schemamultiinjection, $stylo, $autrestylo, $aiguillestylo, $autreaiguille, $insulinelentematin, $insulinerapidematin, $quantitetotal, $insulinelentemidi, $insulinerapidemidi, $insulinelentesoir, $insulinerapidesoir, $totalinsulinelente, $totalinsulinerapide, $specialite1, $posologie1, $specialite2, $posologie2, $specialite3, $posologie3, $specialite4, $posologie4, $Horaire1, $Debit1, $Horaire2, $Debit2, $Horaire3, $Debit3, $Horaire4, $Debit4, $Horaire5, $Debit5, $Horaire6, $Debit6, $Horaire7, $Debit7, $Horaire8, $Debit8, $Horaire9, $Debit9, $Horaire10, $Debit10, $Horaire11, $Debit11, $Horaire12, $Debit12, $Horaire13, $Debit13, $Horaire14, $Debit14, $Horaire15, $Debit15, $Horaire16, $Debit16, $Horaire21, $Debit21, $Horaire22, $Debit22, $Horaire23, $Debit23, $Horaire24, $Debit24, $Horaire25, $Debit25, $Horaire26, $Debit26, $Horaire27, $Debit27, $Horaire28, $Debit28, $Horaire29, $Debit29, $Horaire210, $Debit210, $Horaire211, $Debit211, $Horaire212, $Debit212, $Horaire213, $Debit213, $Horaire214, $Debit214, $Horaire215, $Debit215, $Horaire216, $Debit216));
+		$req->execute(array($typediabete, $datediagnostic, $circonstancedecouverte, $antecedentfamiliaux, $datepremieremisesouspompe, $hba1c, $poidsactuel, $poidsforme, $taille, $imc, $nombreglycemieparjour, $typelecteur, $dateprescription, $styloautopiqueur, $nombreinjectionjour, $stylo, $autrestylo, $aiguillestylo, $autreaiguille, $insulinelentematin, $insulinerapidematin, $insulinelentemidi, $insulinerapidemidi, $insulinelentesoir, $insulinerapidesoir, $totalinsulinelente, $totalinsulinerapide, $specialite1, $posologie1, $specialite2, $posologie2, $specialite3, $posologie3, $specialite4, $posologie4, $Horaire1, $Debit1, $Horaire2, $Debit2, $Horaire3, $Debit3, $Horaire4, $Debit4, $Horaire5, $Debit5, $Horaire6, $Debit6, $Horaire7, $Debit7, $Horaire8, $Debit8, $Horaire9, $Debit9, $Horaire10, $Debit10, $Horaire11, $Debit11, $Horaire12, $Debit12, $Horaire13, $Debit13, $Horaire14, $Debit14, $Horaire15, $Debit15, $Horaire16, $Debit16, $Horaire21, $Debit21, $Horaire22, $Debit22, $Horaire23, $Debit23, $Horaire24, $Debit24, $Horaire25, $Debit25, $Horaire26, $Debit26, $Horaire27, $Debit27, $Horaire28, $Debit28, $Horaire29, $Debit29, $Horaire210, $Debit210, $Horaire211, $Debit211, $Horaire212, $Debit212, $Horaire213, $Debit213, $Horaire214, $Debit214, $Horaire215, $Debit215, $Horaire216, $Debit216));
 
 		
 
@@ -443,7 +443,7 @@
 			. $_POST["asgconnaissance2"] .
 			"')") or die(print_r($bdd->ErrorInfo()));
 
-		*/
+		
 
 		$bdd->exec("INSERT INTO connaissances
 			(
