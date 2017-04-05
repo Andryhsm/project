@@ -1683,12 +1683,12 @@
             <button type="submit" class="btn btn-primary hidden" id="save">Enregistrement</button>
         </form>
         <div class="container">
-            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="1">Etape 1</button>
-            <button class="btn btn-primary col-md-2 col-lg-2 col-sm-12 col-xs-12" id="2">Etape 2</button>
-            <button class="btn btn-success col-md-2 col-lg-2 col-sm-12 col-xs-12" id="3">Etape 3</button>
-            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="4">Etape 4</button>
-            <button class="btn btn-info col-md-2 col-lg-2 col-sm-12 col-xs-12" id="5">Etape 5</button>
-            <button class="btn btn-warning col-md-2 col-lg-2 col-sm-12 col-xs-12" id="6">Etape 6</button>
+            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="1" onClick="enHaut();">Etape 1</button>
+            <button class="btn btn-primary col-md-2 col-lg-2 col-sm-12 col-xs-12" id="2" onClick="enHaut();">Etape 2</button>
+            <button class="btn btn-success col-md-2 col-lg-2 col-sm-12 col-xs-12" id="3" onClick="enHaut();">Etape 3</button>
+            <button class="btn btn-default col-md-2 col-lg-2 col-sm-12 col-xs-12" id="4" onClick="enHaut();">Etape 4</button>
+            <button class="btn btn-info col-md-2 col-lg-2 col-sm-12 col-xs-12" id="5" onClick="enHaut();">Etape 5</button>
+            <button class="btn btn-warning col-md-2 col-lg-2 col-sm-12 col-xs-12" id="6" onClick="enHaut();">Etape 6</button>
         </div>
 
         <button class="btn btn-primary btn-lg hidden" id="triggerwarning" data-toggle="modal" data-target="#loginerror"></button>
@@ -1753,6 +1753,11 @@
                     }
                 });
             });
+
+            function enHaut()
+            {
+                $('html,body').animate({scrollTop: 0}, 'fast');
+            }
         </script>
 
     </body>
