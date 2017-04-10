@@ -5,19 +5,19 @@
             <div class="col-lg-6">
 
                 <label for="activitephysique">Activité physique (type/frequence) :</label>
-                <input type="text" class="form-control" id="activitephysique" name="activitephysique" placeholder="activité physique"/>
+                <textarea type="text" rows="3" class="form-control" id="activitephysique" name="activitephysique" placeholder="activité physique"/></textarea>
                 <label for="profession">Profession : </label>
                 <input type="text" class="form-control" id="profession" name="profession" placeholder="profession"/>
                 <label for="situationfamiliale">Situation familiale :</label>
                 <input type="text" class="form-control" id="situationfamiliale" name="situationfamiliale" placeholder="situation familiale"/>
                 <label for="observation">Observations:</label>
-                <input type="text" class="form-control" id="observation" name="observation" placeholder="observations"/>
+                <textarea type="text" rows="3" class="form-control" id="observation" name="observation" placeholder="observations"/></textarea>
 
             </div>
             <div class="col-lg-6">
 
                 <label for="hygienealimentaire">Hygiène alimentaire (habitude/régime):	</label>
-                <input type="text" class="form-control" id="hygienealimentaire" name="hygienealimentaire" placeholder="hygiène alimentaire"/>
+                <textarea type="text" rows="3" class="form-control" id="hygienealimentaire" name="hygienealimentaire" placeholder="hygiène alimentaire"/></textarea>
 
                 <div class="radio">
                     <label for="stabilitehoraires">Stabilités des horraires : </label>
@@ -33,7 +33,7 @@
                 <label for="details">Details:	</label>
                 <textarea name="details" id="inputDetails" class="form-control" rows="3"></textarea>
                 <label for="environnement">Environnement social :	</label>
-                <input type="text" class="form-control" id="environnement" name="environnement" placeholder="environement social"/>
+                <textarea type="text" rows="3" class="form-control" id="environnement" name="environnement" placeholder="environement social"/></textarea>
 
             </div>
         </div>
@@ -129,7 +129,7 @@
 
 
         <div class="radio">	
-            <label>Régime alimentaire: </label>
+            <label>SUIVI DE POIDS </label>
             <label>
                 <input type="radio" name="regime" id="inputRegime" value="oui" checked="checked">
                 Oui
@@ -144,30 +144,30 @@
         <textarea rows="3" type="text" name="observation2" class="form-control" id="" placeholder="observation"></textarea>
         <br>
         <label for="survenue">Survenue de compilations :  </label>
-        <input type="text" name="survenue" class="form-control" id="" placeholder="survenue de compilations">
+        <textarea rows="3" type="text" name="survenue" class="form-control" id="" placeholder="survenue de compilations"></textarea>
         <br>
         <label for="atcd">ATCD/ autre pathologies :  </label>
-        <input type="text" name="atcd" class="form-control" id="" placeholder="ATCD/ autre pathologies">
+        <textarea rows="3" type="text" name="atcd" class="form-control" id="" placeholder="ATCD/ autre pathologies"></textarea>
         <br>
         <label for="traitement">Traitement :  </label>
         <textarea rows="3" type="text" name="traitement" class="form-control" id="traitement" placeholder="traitement"></textarea>
         <br>
-        <label for="observation2">Suivi de poids :  </label>
-        <input type="text" name="observation2" class="form-control" id="" placeholder="suivi de poids">
+        <!-- <label for="observation2">Suivi de poids :  </label>
+        <input type="text" name="observation2" class="form-control" id="" placeholder="suivi de poids"> -->
         <br>
         <div class="table-responsive">
             <table id="table_habitude" class="table table-bordered table-hover" style="color: white;">
                 <tr>
                     <th>Date</th>
-                    <th><input type="date" id="date1" class="col-lg-12 form-control" name="date1"></th>
-                    <th><input type="date" id="date2" class="col-lg-12 form-control" name="date2"></th>
-                    <th><input type="date" id="date3" class="col-lg-12 form-control" name="date3"></th>
-                    <th><input type="date" id="date4" class="col-lg-12 form-control" name="date4"></th>
-                    <th><input type="date" id="date5" class="col-lg-12 form-control" name="date5"></th>
-                    <th><input type="date" id="date6" class="col-lg-12 form-control" name="date6"></th>
-                    <th><input type="date" id="date7" class="col-lg-12 form-control" name="date7"></th>
-                    <th><input type="date" id="date8" class="col-lg-12 form-control" name="date8"></th>
-                    <th><input type="date" id="date9" class="col-lg-12 form-control" name="date9"></th>
+                    <th><input type="text" id="date1" class="col-lg-12 form-control datepickerAll" name="date1"></th>
+                    <th><input type="text" id="date2" class="col-lg-12 form-control datepickerAll" name="date2"></th>
+                    <th><input type="text" id="date3" class="col-lg-12 form-control datepickerAll" name="date3"></th>
+                    <th><input type="text" id="date4" class="col-lg-12 form-control datepickerAll" name="date4"></th>
+                    <th><input type="text" id="date5" class="col-lg-12 form-control datepickerAll" name="date5"></th>
+                    <th><input type="text" id="date6" class="col-lg-12 form-control datepickerAll" name="date6"></th>
+                    <th><input type="text" id="date7" class="col-lg-12 form-control datepickerAll" name="date7"></th>
+                    <th><input type="text" id="date8" class="col-lg-12 form-control datepickerAll" name="date8"></th>
+                    <th><input type="text" id="date9" class="col-lg-12 form-control datepickerAll" name="date9"></th>
                 </tr>
                 <tr>
                     <td>Taille</td>
@@ -305,7 +305,7 @@
         </div>
         <br/>
 
-        <div class="radio">
+        <!-- <div class="radio">
             <label for="activitephysique2">Activité physique : </label>
             <label>
                 <input type="radio" name="activitephysique2" id="inputActivitephysique2" value="oui" checked="checked">
@@ -325,10 +325,6 @@
                 <label for="frequence2">Fréquence :  </label>
                 <input type="text" name="frequence2" class="form-control" id="frequence2" placeholder="fréquence">
             </div>
-        </div>
-
-
+        </div> -->
     </fieldset><br/><br/>
-
 </div>
-

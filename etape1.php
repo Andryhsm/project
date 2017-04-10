@@ -1,65 +1,57 @@
 <?php
-    $statut = $_SESSION['statut'];
-    $statut = utf8_encode($statut);
+$statut = $_SESSION['statut'];
+$statut = utf8_encode($statut);
 
-    if($statut == "Médecin traitant")
-    {
-
-?>
+if ($statut == "Médecin traitant") {
+    ?>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.medecintraitant').removeClass('hidden');
             $('#telmt').attr('value', "<?php echo($_SESSION['tel']); ?>");
             $('#villemt').attr('value', "<?php echo($_SESSION['ville']); ?>");
             $('#mailmt').attr('value', "<?php echo($_SESSION['email']); ?>");
-            $('#medecintraitant').attr("value", "<?php echo($_SESSION['nom']." " .$_SESSION['prenom'] ); ?>");
-        });    
+            $('#medecintraitant').attr("value", "<?php echo($_SESSION['nom'] . " " . $_SESSION['prenom'] ); ?>");
+        });
     </script>
-<?php
-    } 
-        else if($statut == "Diabétologue libéral")
-    {
-?>
+    <?php
+} else if ($statut == "Diabétologue libéral") {
+    ?>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.diabetologueliberal').removeClass('hidden');
             $('#teldl').attr('value', "<?php echo($_SESSION['tel']); ?>");
             $('#villedl').attr('value', "<?php echo($_SESSION['ville']); ?>");
             $('#maildl').attr('value', "<?php echo($_SESSION['email']); ?>");
-            $('#diabetologueliberal').attr("value", "<?php echo($_SESSION['nom']." " .$_SESSION['prenom'] ); ?>");
+            $('#diabetologueliberal').attr("value", "<?php echo($_SESSION['nom'] . " " . $_SESSION['prenom'] ); ?>");
 
-        });    
+        });
     </script>
-<?php
-    } 
-        else if($statut == "Diabétologue prescripteur")
-    {
-?>
+    <?php
+} else if ($statut == "Diabétologue prescripteur") {
+    ?>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.prescripteur').removeClass('hidden');
             $('#teldp').attr('value', "<?php echo($_SESSION['tel']); ?>");
             $('#villedp').attr('value', "<?php echo($_SESSION['ville']); ?>");
             $('#maildp').attr('value', "<?php echo($_SESSION['email']); ?>");
-            $('#diabetologueprescripteur').attr("value", "<?php echo($_SESSION['nom']." " .$_SESSION['prenom'] ); ?>");
-        });    
+            $('#diabetologueprescripteur').attr("value", "<?php echo($_SESSION['nom'] . " " . $_SESSION['prenom'] ); ?>");
+        });
     </script>
-<?php
-    } 
-        else if($statut == "Diététicienne")
-    {
-?>
+    <?php
+} else if ($statut == "Diététicienne") {
+    ?>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.dieteticienne').removeClass('hidden');
             $('#teld').attr('value', "<?php echo($_SESSION['tel']); ?>");
             $('#villed').attr('value', "<?php echo($_SESSION['ville']); ?>");
             $('#maild').attr('value', "<?php echo($_SESSION['email']); ?>");
-            $('#dieteticienne').attr("value", "<?php echo($_SESSION['nom']." " .$_SESSION['prenom'] ); ?>");
-        });    
+            $('#dieteticienne').attr("value", "<?php echo($_SESSION['nom'] . " " . $_SESSION['prenom'] ); ?>");
+        });
     </script>
-<?php
-    }
+    <?php
+}
 ?>
 
 
@@ -95,7 +87,7 @@
         </div>
 
     </fieldset>
-    <fieldset class="col-sm-4">
+    <fieldset class="col-sm-5">
         <div class="well">
             <center><h4>RENSEIGNEMENTS PATIENT</h4></center>
             <div class="form-group">
@@ -114,17 +106,20 @@
             <div class="form-group">
                 <label for="datenaissance" class="col-sm-4 control-label">Né(e) le:</label>
                 <div class="col-sm-7">
-                    <input type="date" onchange="calcul_age(this.value)" placeholder="Date de naissance" required class="form-control" name="datenaissance" id="datenaissance">
+                    <input type="text" onchange="calcul_age(this.value)" placeholder="Date de naissance" required class="form-control date datepicker" name="datenaissance" id="datenaissance">
                 </div>
             </div>
 
             <script>
                 function calcul_age(id_naissance) {
 
-                    var d = new Date(id_naissance);
+                    var tabEN = id_naissance.split('-');
+                    tabEN.reverse();
+//                    alert(tabEN.join('-'));
+                    var d = new Date(tabEN.join('-'));
                     var date_day = new Date();
                     var rep = date_day.getFullYear() - d.getFullYear();
-                    //alert (rep);
+//                    alert (rep);
                     document.getElementById('agepatient').value = rep;
                 }
             </script>
@@ -172,7 +167,7 @@
         </div>
     </fieldset>
 
-    <fieldset class="col-sm-8">
+    <fieldset class="col-sm-7">
         <div class="well">
             <center><h4>RENSEIGNEMENTS PRESCRIPTEUR</h4></center>
             <div class="form-group">
@@ -181,19 +176,19 @@
                     <input type="text" readonly="" placeholder="Etablissement prescripteur" class="form-control" name="etablissementprescripteur" id="etablissementprescripteur" value="<?php echo utf8_encode($_SESSION['etablissement']); ?>">
                 </div>
             </div>
-            <div class="form-group col-sm-6">
+            <!--<div class="form-group col-sm-6">
                 <label for="ville" class="col-sm-3 control-label">Ville:</label>
                 <div class="col-sm-9">
                     <input type="text" placeholder="Ville" class="form-control" name="villeep" id="villeep">
                 </div>
-            </div>
+            </div>-->
 
-            <div class="form-group col-sm-6">
-                <label for="service" class="col-sm-3 control-label">Service:</label>
-                <div class="col-sm-9">
+            <div class="form-group">
+                <label for="service" class="col-sm-4 control-label">Service:</label>
+                <div class="col-sm-7">
                     <input type="text" placeholder="Service" class="form-control" name="serviceep" id="serviceep">
                 </div>
-            </div>
+            </div><br>
 
 
             <div class="prescripteur hidden">
@@ -342,7 +337,7 @@
 
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="referenteservice" class="col-sm-4 control-label">IDE référente du service:</label>
                 <div class="col-sm-7">
                     <input type="text" placeholder="IDE référente du service" class="form-control" name="idereferente" id="idereferente">
@@ -373,7 +368,7 @@
                 <div class="col-sm-9">
                     <input type="email" placeholder="mail" class="form-control" name="mailirs" id="mailirs">
                 </div>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="membrereseau" class="col-sm-4 control-label">Membre réseau:</label>
                 <div class="col-sm-7">
@@ -431,14 +426,18 @@
         <div class="form-group">
             <label for="dateinstallation" class="col-sm-4 control-label">Date d'installation:</label>
             <div class="col-sm-7">
-                <input type="date" required placeholder="Date d'installation" class="form-control" name="dateinstallation" id="dateinstallation">
+                <input type="text" required placeholder="Date d'installation" class="form-control date datepickerAll" name="dateinstallation" id="dateinstallation">
             </div>
         </div>
 
         <div class="form-group">
             <label for="mobile" class="col-sm-4 control-label">Type de cathéter:</label>
             <div class="col-sm-7">
-                <div class="radio">
+                <select name="catheter" class="form-control">
+                    <option value="DROIT">DROIT</option>
+                    <option value="TANGEANTIEL">TANGEANTIEL</option>
+                </select>
+                <!-- <div class="radio">
                     <label>
                         <input type="radio" name="typecatheter" id="optionsRadios1" value="DROIT" checked="">
                         DROIT
@@ -448,7 +447,7 @@
                         <input type="radio" name="typecatheter" id="optionsRadios2" value="TANGEANTIEL">
                         TANGEANTIEL
                     </label>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -497,7 +496,13 @@
         <div class="form-group">
             <label for="reservoir" class="col-sm-4 control-label">Réservoir:</label>
             <div class="col-sm-7">
-                <input type="text" placeholder="Réservoir" class="form-control" name="reservoir" id="reservoir">
+                <select name="reservoir" class="form-control">
+                    <option value="Réservoir 1">Réservoir 1</option>
+                    <option value="Réservoir 2">Réservoir 2</option>
+                    <option value="Réservoir 3">Réservoir 3</option>
+                    <option value="Réservoir 4">Réservoir 4</option>
+                </select>
+                <!-- <input type="text" placeholder="Réservoir" class="form-control" name="reservoir" id="reservoir"> -->
             </div>
         </div>
         <div class="form-group">
